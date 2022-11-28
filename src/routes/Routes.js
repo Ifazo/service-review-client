@@ -6,6 +6,7 @@ import Blogs from "../components/Blogs/Blogs";
 import MyReviews from "../components/Reviews/MyReviews";
 import AddServices from "../components/Services/AddServices";
 import Services from "../components/Services/Services";
+import Login from "../components/Login/Login";
 
 export const routes = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const routes = createBrowserRouter([
            {
                 path: "/addservice",
                 element: <AddServices></AddServices>
+           },
+           {
+               path: "/signin",
+               element: <Login></Login>
            }
         ]
     }
