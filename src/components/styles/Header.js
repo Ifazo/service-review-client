@@ -1,51 +1,58 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    return (
-        <div>
-            <div className="navbar bg-base-100">
-  <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">Cyber House</a>
-  </div>
-  <div className="flex-none">
-    {/* <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle">
-        <div className="indicator">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span className="badge badge-sm indicator-item">8</span>
+  return (
+    <>
+      <nav class="bg-white shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
+          <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow" />
         </div>
-      </label>
-      <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
-        <div className="card-body">
-          <span className="font-bold text-lg">8 Items</span>
-          <span className="text-info">Subtotal: $999</span>
-          <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
-          </div>
+        <div class="hidden md:ml-6 md:flex md:space-x-8">
+          <Link to="/" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> Home </Link>
+          <Link to="/services" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> Services </Link>
+          <Link to="/reviews" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> My Reviews </Link>
+          <Link to="/addservice" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> Add Service </Link>
+          <Link to="/blogs" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"> Blogs </Link>
         </div>
       </div>
-    </div> */}
-    <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="https://placeimg.com/80/80/people" />
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <Link to='/'>Log Out</Link>
+          </button>
         </div>
-      </label>
-      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
+      </div>
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <Link to='/signin'>Sign In</Link>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-        </div>
-    );
+
+  
+  <div class="md:hidden" id="mobile-menu">
+    <div class="pt-2 pb-3 space-y-1">
+      
+      <Link to="/" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">Home</Link>
+      <Link to="/services" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">Services</Link>
+      <Link to="/reviews" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">My Reviews</Link>
+      <Link to="/addservice" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">Add Service</Link>
+      <Link to="/blogs" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6">Blogs</Link>
+    </div>
+
+  </div>
+</nav>
+
+    </>
+  );
 };
 
 export default Header;
