@@ -52,13 +52,6 @@ const Signup = () => {
           >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
-              <select className="select select-bordered w-full max-w-xs" {...register("account")}>
-                <option disabled selected>
-                  Select Account type...
-                </option>
-                <option>Seller</option>
-                <option>Buyer</option>
-              </select>
               <div>
                 <label htmlFor="name" className="sr-only">
                   Name
@@ -105,7 +98,6 @@ const Signup = () => {
                 />
               </div>
             </div>
-            {error &&  <p className="text-red-500 text-center">{error?.message}</p>}
 
             <div className="flex items-center justify-center">
               <div className="text-sm">

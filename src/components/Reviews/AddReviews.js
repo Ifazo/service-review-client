@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext,  } from "react";
 import toast from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
 const AddReviews = () => {
+  const review = useLoaderData()
+  console.log(review);
   const { user } = useContext(AuthContext);
   console.log(user);
   const { displayName, photoURL, email } = user;
@@ -11,7 +14,7 @@ const AddReviews = () => {
     event.preventDefault();
     const name = event.target.name.value;
     const description = event.target.description.value;
-    const review = { displayName, photoURL, email, name, description };
+    const review = { displayName, photoURL, email, name, description, date: new Date() };
     console.log(review);
 
     fetch("http://localhost:5000/reviews", {

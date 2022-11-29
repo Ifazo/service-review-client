@@ -1,9 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
   const service = useLoaderData();
-  const { name, price, description } = service;
+  const { _id, name, price, description, img } = service;
   return (
     <>
       <div className="relative py-16 bg-white overflow-hidden">
@@ -128,12 +128,15 @@ const CardDetails = () => {
             <figure>
               <img
                 className="w-full rounded-lg"
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
+                src={img}
                 alt=""
                 width="1310"
                 height="873"
               />
             </figure>
+          </div>
+          <div>
+            <Link className="btn btn-ghost" to={`/reviews/${_id}`}>Add Review</Link>
           </div>
         </div>
       </div>
