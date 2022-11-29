@@ -6,6 +6,7 @@ const AddServices = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const { displayName, email } = user;
+
   const handleServices = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -42,73 +43,73 @@ const AddServices = () => {
 
   return (
     <>
-      <h2 class="text-xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+      <h2 className="text-xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
         Add a Services
       </h2>
       <form onSubmit={handleServices}>
-        <div class="flex justify-center">
-          <div class="mb-3 xl:w-96">
+        <div className="flex justify-center">
+          <div className="mb-3 xl:w-96">
             <label
               for="exampleFormControlInput1"
-              class="form-label inline-block mb-2 text-gray-700"
+              className="form-label inline-block mb-2 text-gray-700"
             >
               Service Name
             </label>
             <input
               name="name"
               type="text"
-              class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               id="exampleFormControlInput1"
               placeholder="Service Name"
             />
           </div>
         </div>
-        <div class="flex justify-center">
-          <div class="mb-3 xl:w-96">
+        <div className="flex justify-center">
+          <div className="mb-3 xl:w-96">
             <label
               for="exampleFormControlInput2"
-              class="form-label inline-block mb-2 text-gray-700"
+              className="form-label inline-block mb-2 text-gray-700"
             >
               Service Image URL
             </label>
             <input
               name="img"
               type="text"
-              class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               id="exampleFormControlInput2"
               placeholder="Image URL"
             />
           </div>
         </div>
-        <div class="flex justify-center">
-          <div class="mb-3 xl:w-96">
+        <div className="flex justify-center">
+          <div className="mb-3 xl:w-96">
             <label
               for="exampleFormControlInput4"
-              class="form-label inline-block mb-2 text-gray-700"
+              className="form-label inline-block mb-2 text-gray-700"
             >
               Price
             </label>
             <input
               name="price"
               type="text"
-              class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               id="exampleFormControlInput4"
               placeholder="Service Price"
             />
           </div>
         </div>
-        <div class="flex justify-center">
-          <div class="mb-3 xl:w-96">
+        <div className="flex justify-center">
+          <div className="mb-3 xl:w-96">
             <label
               for="exampleFormControlInput6"
-              class="form-label inline-block mb-2 text-gray-700"
+              className="form-label inline-block mb-2 text-gray-700"
             >
               Description
             </label>
             <input
               name="description"
               type="text"
-              class=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
+              className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
               id="exampleFormControlInput6"
               placeholder="Description"
             />

@@ -6,14 +6,14 @@ const CardDetails = () => {
   const { name, price, description } = service;
   return (
     <>
-      <div class="relative py-16 bg-white overflow-hidden">
-        <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+      <div className="relative py-16 bg-white overflow-hidden">
+        <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
           <div
-            class="relative h-full text-lg max-w-prose mx-auto"
+            className="relative h-full text-lg max-w-prose mx-auto"
             aria-hidden="true"
           >
             <svg
-              class="absolute top-12 left-full transform translate-x-32"
+              className="absolute top-12 left-full transform translate-x-32"
               width="404"
               height="384"
               fill="none"
@@ -33,7 +33,7 @@ const CardDetails = () => {
                     y="0"
                     width="4"
                     height="4"
-                    class="text-gray-200"
+                    className="text-gray-200"
                     fill="currentColor"
                   />
                 </pattern>
@@ -45,7 +45,7 @@ const CardDetails = () => {
               />
             </svg>
             <svg
-              class="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32"
+              className="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32"
               width="404"
               height="384"
               fill="none"
@@ -65,7 +65,7 @@ const CardDetails = () => {
                     y="0"
                     width="4"
                     height="4"
-                    class="text-gray-200"
+                    className="text-gray-200"
                     fill="currentColor"
                   />
                 </pattern>
@@ -77,7 +77,7 @@ const CardDetails = () => {
               />
             </svg>
             <svg
-              class="absolute bottom-12 left-full transform translate-x-32"
+              className="absolute bottom-12 left-full transform translate-x-32"
               width="404"
               height="384"
               fill="none"
@@ -97,7 +97,7 @@ const CardDetails = () => {
                     y="0"
                     width="4"
                     height="4"
-                    class="text-gray-200"
+                    className="text-gray-200"
                     fill="currentColor"
                   />
                 </pattern>
@@ -110,24 +110,24 @@ const CardDetails = () => {
             </svg>
           </div>
         </div>
-        <div class="relative px-4 sm:px-6 lg:px-8">
-          <div class="text-lg max-w-prose mx-auto">
+        <div className="relative px-4 sm:px-6 lg:px-8">
+          <div className="text-lg max-w-prose mx-auto">
             <h1>
-              <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 Service Name: {name}
               </span>
-              <span class="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
+              <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
                 Price: {price}
               </span>
             </h1>
-            <p class="mt-8 text-xl text-gray-500 leading-8">
+            <p className="mt-8 text-xl text-gray-500 leading-8">
               {description}
             </p>
           </div>
-          <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+          <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
             <figure>
               <img
-                class="w-full rounded-lg"
+                className="w-full rounded-lg"
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
                 alt=""
                 width="1310"
