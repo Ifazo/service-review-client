@@ -1,4 +1,5 @@
 import React from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link, useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
@@ -126,6 +127,8 @@ const CardDetails = () => {
           </div>
           <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
             <figure>
+              <PhotoProvider>
+              <PhotoView src={img}>
               <img
                 className="w-full rounded-lg"
                 src={img}
@@ -133,6 +136,8 @@ const CardDetails = () => {
                 width="1310"
                 height="873"
               />
+              </PhotoView>
+              </PhotoProvider>
             </figure>
           </div>
           <div>
