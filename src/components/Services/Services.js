@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 import Cards from "../Cards/Cards";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/services")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  });
+  const services = useLoaderData();
+
   return (
     <>
       <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
