@@ -1,13 +1,13 @@
 import React from "react";
 
-const Reviews = () => {
+const Reviews = ({service}) => {
 
   return (
     <>
       <div class="flex flex-col sm:flex-row">
         <div class="mt-6 order-2 sm:mt-0 sm:ml-16">
           <h3 class="text-sm font-medium text-gray-900">
-            review.name
+            Ziaul Karim
           </h3>
           <p class="sr-only">5 out of 5 stars</p>
 

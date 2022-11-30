@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
+import Reviews from './Reviews';
 
-const ServiceReviews = ({_id: serviceId}) => {
+const ServiceReviews = ({serviceId}) => {
 
     const [reviews, setReviews] = useState([]);
     
@@ -13,8 +14,7 @@ const ServiceReviews = ({_id: serviceId}) => {
     return (
         <>
             Service reviews are listed here: {reviews.length}
-            <h2 id="reviews-heading" class="sr-only">{serviceId}</h2>
-            
+            <Reviews></Reviews>
         </>
     );
 };
