@@ -1,6 +1,8 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import AddReviews from "../Reviews/AddReviews";
+import ServiceReviews from "../Reviews/ServiceReviews";
 
 const CardDetails = () => {
   const service = useLoaderData();
@@ -128,22 +130,30 @@ const CardDetails = () => {
           <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
             <figure>
               <PhotoProvider>
-              <PhotoView src={img}>
-              <img
-                className="w-full rounded-lg"
-                src={img}
-                alt=""
-                width="1310"
-                height="873"
-              />
-              </PhotoView>
+                <PhotoView src={img}>
+                  <img
+                    className="w-full rounded-lg"
+                    src={img}
+                    alt=""
+                    width="1310"
+                    height="873"
+                  />
+                </PhotoView>
               </PhotoProvider>
             </figure>
           </div>
-          <div>
-            <Link className="btn btn-ghost" to={`/reviews/${_id}`}>Add Review</Link>
-          </div>
+          {/* <div>
+            <Link className="btn btn-ghost" to={`/services/${_id}`}>
+              Add Review
+            </Link>
+          </div> */}
         </div>
+      </div>
+      <div>
+        <AddReviews key={_id} service={service}></AddReviews>
+      </div>
+      <div>
+        <ServiceReviews key={_id} service={service}></ServiceReviews>
       </div>
     </>
   );

@@ -9,7 +9,7 @@ import Services from "../components/Services/Services";
 import Login from "../components/Login/Login";
 import Signup from "../components/Login/Signup";
 import CardDetails from "../components/Cards/CardDetails";
-import AddReviews from "../components/Reviews/AddReviews";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -24,11 +24,11 @@ export const routes = createBrowserRouter([
            },
            {
                path: "/services",
-               element: <Services></Services>
+               element: <PrivateRoute><Services></Services></PrivateRoute>,
            },
            {
                 path: "/services/:id",
-                element: <CardDetails></CardDetails>,
+                element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
            },
            {
@@ -37,16 +37,11 @@ export const routes = createBrowserRouter([
            },
            {
                 path: "/reviews",
-                element: <MyReviews></MyReviews>
-           },
-           {
-                path: "/reviews/:id",
-                elements: <AddReviews></AddReviews>,
-                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
            },
            {
                 path: "/addservice",
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
            },
            {
                path: "/signin",

@@ -4,8 +4,8 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const { displayName, email } = user;
+  
 
   const handleServices = (event) => {
     event.preventDefault();
@@ -23,7 +23,7 @@ const AddServices = () => {
       description,
     };
     console.log(service);
-
+    
     fetch("http://localhost:5000/services", {
       method: "POST",
       headers: {

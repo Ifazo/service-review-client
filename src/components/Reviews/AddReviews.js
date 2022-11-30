@@ -1,20 +1,17 @@
 import React, { useContext,  } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
-const AddReviews = () => {
-  const review = useLoaderData()
-  console.log(review);
+const AddReviews = ({service}) => {
+  const {_id: serviceId} = service;
   const { user } = useContext(AuthContext);
-  console.log(user);
   const { displayName, photoURL, email } = user;
 
   const handleReviews = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const description = event.target.description.value;
-    const review = { displayName, photoURL, email, name, description, date: new Date() };
+    const review = { serviceId, displayName, photoURL, email, name, description, date: new Date() };
     console.log(review);
 
     fetch("http://localhost:5000/reviews", {
