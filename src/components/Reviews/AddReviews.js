@@ -31,6 +31,7 @@ const AddReviews = ({service}) => {
   };
 
   return (
+    <div>
     <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
       <h2 className="text-xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
         Add a Review
@@ -107,6 +108,7 @@ const AddReviews = ({service}) => {
           Send
         </button>
       </form>
+    </div>
     </div>
   );
 };

@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
-import AddReviews from "../Reviews/AddReviews";
 import ServiceReviews from "../Reviews/ServiceReviews";
+import AddReviews from "../Reviews/AddReviews";
+import { AuthContext } from "../../Contexts/AuthProvider";
 
 const CardDetails = () => {
+  const {user, loading } = useContext(AuthContext);
   const service = useLoaderData();
   const { _id, name, price, description, img } = service;
+
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [_id]);
+
   return (
     <>
       <div className="relative py-16 bg-white overflow-hidden">
@@ -142,18 +155,18 @@ const CardDetails = () => {
               </PhotoProvider>
             </figure>
           </div>
-          {/* <div>
-            <Link className="btn btn-ghost" to={`/services/${_id}`}>
-              Add Review
-            </Link>
-          </div> */}
         </div>
       </div>
-      <div>
-        <AddReviews key={_id} service={service}></AddReviews>
+      <div className="grid grid-cols-1 lg:grid-cols-2 m-5 justify-between">
+        {reviews.map((review) => (
+          <ServiceReviews key={_id} review={review}></ServiceReviews>
+        ))}
       </div>
       <div>
-        <ServiceReviews key={_id} service={service}></ServiceReviews>
+      {
+        user?.email ? <><AddReviews key={_id} service={service}></AddReviews></> 
+        : <><h2 className="text-xl font-bold text-blue-600">Please Login to add Reviews!!</h2></>
+      }
       </div>
     </>
   );

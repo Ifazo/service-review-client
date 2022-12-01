@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider";
 import Cards from "../Cards/Cards";
 
 const Services = () => {
+  const {user, loading} = useContext(AuthContext);
   const services = useLoaderData();
 
   return (
